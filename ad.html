@@ -1,8 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>광고 클릭 감사합니다</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: transparent;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    #adBox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 250px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background: white;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    #adNotice {
+      padding: 10px;
+      color: #555;
+      background-color: #fdf3d1;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="adBox">
+    <script type='text/javascript' src='//pl26352759.profitableratecpm.com/98/53/a7/9853a70e54bf0c8fb97ddabbc9e6181b.js'></script>
+    <noscript>
+      <div id="adNotice">📢 광고 차단이 감지되었습니다! 광고는 사이트 유지에 도움이 돼요 😊</div>
+    </noscript>
+  </div>
 
-    <html>
-    <head><meta charset='UTF-8'></head>
-    <body style='margin:0; padding:0;'>
-        <script type='text/javascript' src='//pl26352759.profitableratecpm.com/98/53/a7/9853a70e54bf0c8fb97ddabbc9e6181b.js'></script>
-    </body>
-    </html>
-    
+  <script>
+    // 광고 차단 감지 후 안내 문구 표시
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        const adScript = document.querySelector("script[src*='profitableratecpm']");
+        const adBox = document.getElementById("adBox");
+
+        if (!adScript || adBox.offsetHeight === 0) {
+          adBox.innerHTML = "<div id='adNotice'>📢 광고 차단이 감지되었습니다! 광고는 사이트 유지에 도움이 돼요 😊</div>";
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
